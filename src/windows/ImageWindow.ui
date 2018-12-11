@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>PlaneWindow</class>
+    <widget class="QMainWindow" name="PlaneWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1080</width>
+                <height>720</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Plane view</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QGridLayout" name="gridLayout">
+                <property name="spacing">
+                    <number>0</number>
+                </property>
+                <item row="0" column="0">
+                    <widget class="ImageView" name="imageView" native="true"/>
+                </item>
+            </layout>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>1080</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <widget class="QMenu" name="menuFile">
+                <property name="title">
+                    <string>Fi&amp;le</string>
+                </property>
+                <addaction name="actionExit"/>
+            </widget>
+            <widget class="QMenu" name="menuAbout">
+                <property name="title">
+                    <string>Hel&amp;p</string>
+                </property>
+                <addaction name="actionAbout"/>
+            </widget>
+            <addaction name="menuFile"/>
+            <addaction name="menuAbout"/>
+        </widget>
+        <widget class="QStatusBar" name="statusBar"/>
+        <widget class="QDockWidget" name="segmentDockWidget">
+            <property name="minimumSize">
+                <size>
+                    <width>280</width>
+                    <height>326</height>
+                </size>
+            </property>
+            <property name="features">
+                <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+            </property>
+            <property name="windowTitle">
+                <string>Tools</string>
+            </property>
+            <attribute name="dockWidgetArea">
+                <number>1</number>
+            </attribute>
+            <widget class="QWidget" name="dockWidgetContents">
+                <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                    <property name="spacing">
+                        <number>6</number>
+                    </property>
+                    <property name="leftMargin">
+                        <number>6</number>
+                    </property>
+                    <property name="topMargin">
+                        <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                        <number>6</number>
+                    </property>
+                    <property name="bottomMargin">
+                        <number>6</number>
+                    </property>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="title">
+                                <string>Assessment &amp;&amp; projection</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_2">
+                                <item>
+                                    <widget class="QComboBox" name="projectionComboBox"/>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="label">
+                                        <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="font">
+                                            <font>
+                                                <pointsize>11</pointsize>
+                                            </font>
+                                        </property>
+                                        <property name="text">
+                                            <string>assessment name/projection name</string>
+                                        </property>
+                                        <property name="alignment">
+                                            <set>Qt::AlignCenter</set>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_2">
+                            <property name="title">
+                                <string>Segment</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_3">
+                                <item>
+                                    <widget class="QComboBox" name="segmentComboBox">
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QLabel" name="label_2">
+                                        <property name="font">
+                                            <font>
+                                                <pointsize>11</pointsize>
+                                            </font>
+                                        </property>
+                                        <property name="text">
+                                            <string>[group name/]segment name</string>
+                                        </property>
+                                        <property name="alignment">
+                                            <set>Qt::AlignCenter</set>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QTextBrowser" name="textBrowser">
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                </layout>
+            </widget>
+        </widget>
+        <action name="actionExit">
+            <property name="text">
+                <string>&amp;Exit</string>
+            </property>
+        </action>
+        <action name="actionAbout">
+            <property name="text">
+                <string>&amp;About</string>
+            </property>
+        </action>
+    </widget>
+    <customwidgets>
+        <customwidget>
+            <class>ImageView</class>
+            <extends>QWidget</extends>
+            <header>pyqtgraph</header>
+            <container>1</container>
+        </customwidget>
+    </customwidgets>
+    <resources/>
+    <connections/>
+</ui>
